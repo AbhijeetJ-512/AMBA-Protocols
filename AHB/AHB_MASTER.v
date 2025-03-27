@@ -115,10 +115,10 @@ end
 // Stage Actions
 always @(posedge HCLK or negedge HRESETn) begin
     if(!HRESETn) begin
-        HADDR <= ADDRESS_WIDTH'0;
+        HADDR <= {ADDRESS_WIDTH{1'b0}};
         HWRITE <= 1'b1;
         burst_count <= 3'b000;
-        HWDATA <= DATA_WIDTH'0;
+        HWDATA <= {DATA_WIDTH{1'b0}};
         HSIZE <= BYTE;
         HBURST <= SINGLE;
     end

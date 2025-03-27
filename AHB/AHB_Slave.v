@@ -76,7 +76,7 @@ always @(posedge HCLK or negedge HRESETn) begin
             IDLE : begin
                 HRESP <= 1'b0;
                 HREADYOUT <= 1'b1;
-                wait_counter <= '0;
+                wait_counter <= 'b0;
                 write_en <= 1'b0;
                 hsel_samp <= HSELx;
             end
@@ -98,7 +98,7 @@ always @(posedge HCLK or negedge HRESETn) begin
                     end
                     else begin
                         HREADYOUT  <= 1'b1;
-                        wait_counter <= '0;
+                        wait_counter <= 'b0;
                         write_en     <= 1'b1;
                     end
                 end
@@ -110,7 +110,7 @@ always @(posedge HCLK or negedge HRESETn) begin
                     end
                     else begin
                         HREADYOUT  <= 1'b1;
-                        wait_counter <= '0;
+                        wait_counter <= 'b0;
                         write_en     <= 1'b0;
                     end
                 end
