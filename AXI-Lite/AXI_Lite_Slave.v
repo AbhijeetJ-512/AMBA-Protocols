@@ -120,7 +120,7 @@ module axi_lite_slave #(
                     if (arvalid && arready) begin
                         araddr_reg <= araddr;
                         arready    <= 1'b0;
-                        rdata      <= mem[araddr[9:2]];
+                        rdata      <= mem[araddr[$clog2(DATA_DEPTH)+1:2]];
                         rresp      <= OKAY;
                         rvalid     <= 1'b1;
                         rd_state   <= RD_DATA;
